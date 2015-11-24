@@ -4,7 +4,7 @@ Here is some code to help you work with imagery and metadata from the Cassini sp
 ### Requirements
 This uses **Node**, **MySQL** and some standard command line tools. Extra stuff requires **ImageMagick** (http://www.imagemagick.org/).
 
-The main tool in here is *process_coiss.js* a node script that will go through directories full of raw Cassini ISS data downloads and export a CSV file of all image metadata than can then be used to import into a database. This database can then be used to find, sort and query sequnces of Cassini images.  I've also included *cassini_ISS_metadata.sql* which is the code needed to create a MySQL table to import your CSV into. 
+The main tool in here is **process_coiss.js** a node script that will go through directories full of raw Cassini ISS data downloads and export a CSV file of all image metadata than can then be used to import into a database. This database can then be used to find, sort and query sequnces of Cassini images.  I've also included **cassini_ISS_metadata.sql** which is the code needed to create a MySQL table to import your CSV into. 
 
 ### Download the raw Cassini data
 The raw binary images and metadata text files can be downloaded here:
@@ -12,7 +12,7 @@ http://pds-imaging.jpl.nasa.gov/volumes/iss.html
 
 This archive is updated quarterly, so the most recent imagery won't be in here (but you can get the latest, unarchived images here: http://saturn.jpl.nasa.gov/photos/raw/?start=1)
 
-Download all of the tar archives of Cassini data from 2004 to now from NASA. The imagery i was focused on was from Saturn, which is saved in volumes 1-93 (as of November 2015). Each volume is named like this: "coiss_20XX" with XX indicating which volume it represents.
+Download all of the tar archives of Cassini data from 2004 to now from NASA. The imagery I was focused on was from Saturn, which is saved in volumes 1-93 (as of November 2015). Each volume is named like this: **coiss_20XX** with **XX** indicating which volume it represents.
 
 So you can set up a script to pull them down like this:
 ```
@@ -32,7 +32,7 @@ tar xopf coiss_2003.tar.gz
 
 ### Install node dependecies
 
-Have npm install the node dependencies you need for this tool. In the terminal, navigate to the directory that holds this repo. 
+Have npm install the node dependencies you need for this tool. In the terminal, navigate to the directory that holds this repo. Then type: 
 ``` npm install```
 
 ### Configure process_coiss.js
@@ -46,6 +46,11 @@ process_directory("coiss_2001");
 ```
 
 This will just process one `coiss_20XX` directory at a time. You can also uncomment the for loop below that to process a sequnce of these directories. 
+
+If you want, you can customize the fields that are extracted from the metadata field (see below in this note for a full list). You can add them to the **fields_to_process** array:
+```
+var fields_to_process = ['FILTER_NAME', '^IMAGE_HEADER', 'TARGET_DESC', 'SEQUENCE_ID', 'SEQUENCE_NUMBER', 'START_TIME'];
+```
 
 ### Run the script
 
@@ -163,6 +168,7 @@ The Wide Angle camera has nine filters per wheel.
 |IRP0|Infrared 0º polarizer|
 |IR1|Infrared band 1|
 
+Here's the full list of fields available to extract from a sample metdata file. 
 ```
 === IDENTIFICATION DATA ELEMENTS ==== 
 ANTIBLOOMING_STATE_FLAG = "ON"
