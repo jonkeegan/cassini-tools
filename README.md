@@ -90,61 +90,71 @@ You can then combine those images in imagemagick to make a composite color image
 Keep an eye on how large the interval is between images, as the closer the better. You will often see the images moving significantly, which will make for pretty misaligned images. Doing this by hand in Photoshop is more often than not the best way to make color images, but this way is cooler. 
 
 COLOR FILTERS KEY FROM HERE: http://saturn.jpl.nasa.gov/faq/FAQRawImages/
-```
-The Narrow Angle camera has 12 filters per wheel.   
-    
-Filter Wheel 1  
-CL1 Clear
-RED Red
-BL1 Blue band 1
-UV2 Ultraviolet band 2
-UV1 Ultraviolet band 1
-IRP0    Infrared 0º polarizer
-P120    120º polarizer
-P60 60º polarizer
-P0  0º polarizer
-HAL Hydrogen Alpha
-IR4 Infrared band 4
-IR2 Infrared band 2
-    
-Filter Wheel 2  
-CL2 Clear
-GRN Green
-UV3 Ultraviolet band 3
-BL2 Blue band 2
-MT2 Methane band 2
-CB2 Continuum band 2
-MT3 Methane band 3
-CB3 Continuum band 3
-MT1 Methane band 1
-CB1 Continuum band 1
-IR3 Infrared band 3
-IR1 Infrared band 1
-    
-The Wide Angle camera has nine filters per wheel.   
-    
-Filter Wheel 1  
-CL1 Clear
-IR3 Infrared band 3
-IR4 Infrared band 4
-IR5 Infrared band 5
-CB3 Continuum band 3
-MT3 Methane band 3
-CB2 Continuum band 2
-MT2 Methane band 2
-IR2 Infrared band 2
-    
-Filter Wheel 2  
-CL2 Clear
-RED Red
-GRN Green
-BL1 Blue band 1
-VIO Violet
-HAL Hydrogen Alpha
-IRP90   Infrared 90º polarizer
-IRP0    Infrared 0º polarizer
-IR1 Infrared band 1
-```
+### Narrow Angle Filter Wheel 1
+
+|Code|Filter color|
+|---|---|
+|CL1|Clear|
+|RED|Red|
+|BL1|Blue band 1|
+|UV2|Ultraviolet band 2|
+|UV1|Ultraviolet band 1|
+|IRP0|Infrared 0º polarizer|
+|P120|120º polarizer|
+|P60|60º polarizer|
+|P0|0º polarizer|
+|HAL|Hydrogen Alpha|
+|IR4|Infrared band 4|
+|IR2|Infrared band 2|
+
+
+### Narrow Angle Filter Wheel 2
+
+|Code|Filter color|
+|---|---|
+|CL2|Clear|
+|GRN|Green|
+|UV3|Ultraviolet band 3|
+|BL2|Blue band 2|
+|MT2|Methane band 2|
+|CB2|Continuum band 2|
+|MT3|Methane band 3|
+|CB3|Continuum band 3|
+|MT1|Methane band 1|
+|CB1|Continuum band 1|
+|IR3|Infrared band 3|
+|IR1|Infrared band 1|
+
+
+The Wide Angle camera has nine filters per wheel.
+
+### Wide Angle Filter Wheel 1
+
+|Code|Filter color|
+|---|---|
+|CL1|Clear|
+|IR3|Infrared band 3|
+|IR4|Infrared band 4|
+|IR5|Infrared band 5|
+|CB3|Continuum band 3|
+|MT3|Methane band 3|
+|CB2|Continuum band 2|
+|MT2|Methane band 2|
+|IR2|Infrared band 2|
+
+### Wide Angle Filter Wheel 2
+
+|Code|Filter color|
+|---|---|
+|CL2|Clear|
+|RED|Red|
+|GRN|Green|
+|BL1|Blue band 1|
+|VIO|Violet|
+|HAL|Hydrogen Alpha|
+|IRP90|Infrared 90º polarizer|
+|IRP0|Infrared 0º polarizer|
+|IR1|Infrared band 1|
 
 ```
 === IDENTIFICATION DATA ELEMENTS ==== 
