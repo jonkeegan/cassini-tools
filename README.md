@@ -2,7 +2,7 @@
 Here is some code to help you work with imagery and metadata from the Cassini space probe's ISS cameras. I wrote this up after building this project: http://graphics.wsj.com/saturn/
 
 ### Requirements
-This uses *Node*, *MySQL* and some standard command line tools. Extra stuff requires *ImageMagick* (http://www.imagemagick.org/).
+This uses **Node**, **MySQL** and some standard command line tools. Extra stuff requires **ImageMagick** (http://www.imagemagick.org/).
 
 The main tool in here is *process_coiss.js* a node script that will go through directories full of raw Cassini ISS data downloads and export a CSV file of all image metadata than can then be used to import into a database. This database can then be used to find, sort and query sequnces of Cassini images.  I've also included *cassini_ISS_metadata.sql* which is the code needed to create a MySQL table to import your CSV into. 
 
