@@ -37,12 +37,15 @@ Now you have to configure the `process_coiss.js` node script. There are two main
 Change `your_data_directory_here` to the directory that has all of your `coiss_20XX` directories.
 
 You also need to tell the script which `coiss` directory to process. 
-```process_directory('coiss_2001');``` 
+```
+process_directory("coiss_2001");
+```
+
 This will just process one `coiss_20XX` directory at a time. You can also uncomment the for loop below that to process a sequnce of these directories. 
 
 ### Run the script
 
-This will run through the specificed `coiss_20XX` directories, and export a CSV
+This will run through the specificed "coiss_20XX" directories, and export a CSV
 ```node process_coiss.js > output.csv```
 
 ### Create and populate database
