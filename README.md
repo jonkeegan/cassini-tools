@@ -80,11 +80,13 @@ Here's such a filter sequence I found:
 |269098|W1731454045_1|(CL1,GRN)|S76|18|2012-317T22:33:53.768|Titan|2012-11-13|
 |269106|W1731454078_1|(CL1,RED)|S76|19|2012-317T22:34:26.782|Titan|2012-11-13|
 
-CL1 and CL2 are clear, so that sequnce is blue, red, green.
+CL1 and CL2 are clear, so that sequnce is blue, green, red.
 
 You can then combine those images in imagemagick to make a composite color image, assigning each image to it's appropraite RGB channel. 
 
 ```convert red_W1731454078_1.jpeg green_W1731454045_1.jpeg blue_W1731454012_1.jpeg -combine rgb_combined.jpg```
+
+Keep an eye on how large the interval is between images, as the closer the better. You will often see the images moving significantly, which will make for pretty misaligned images. Doing this by hand in Photoshop is more often than not the best way to make color images, but this way is cooler. 
 
 COLOR FILTERS KEY FROM HERE: http://saturn.jpl.nasa.gov/faq/FAQRawImages/
 
