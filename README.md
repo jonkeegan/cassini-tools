@@ -1,6 +1,9 @@
 # cassini-tools
 Here is some code to help you work with imagery and metadata from the Cassini space probe's ISS cameras. I wrote this up after building this project: http://graphics.wsj.com/saturn/
 
+### Cassini Imaging Science Subsystem (ISS) Data User's Guide
+The definitive, offical reference guide to all Casini data is here: http://pds-rings.seti.org/cassini/iss/ISS_Data_User_Guide_120703.pdf
+
 ### Requirements
 This uses **Node**, **MySQL** and some standard command line tools. Extra stuff requires **ImageMagick** (http://www.imagemagick.org/).
 
@@ -79,7 +82,30 @@ CREATE TABLE 'cassini_ISS_metadata' (
 ```
 Then import the CSV (any way you are most comfortable, such a phpMyAdmin, Sqeuel Pro, etc)
 
+### Convert the raw binary data to images you can use
+
+This part stinks. I wanted to use the highest resolution (1024x1024) images, so I took all of the files (.IMG and .LBL files), and copied them all to a single directory (I actually made a series of smaller directories as it took so long to process). Then I generated PNGs of each image using the Windows command line utility **IMG2PNG** (http://www.mmedia.is/bjj/utils/img2png/). It actually reads the metadata for each image, and uses that data to convert the raw image data to a PNG.
+
+Alternatively, there are some other images that you can use right off the bat. 
+
+You will find a 256x256 8-bit greyscale version of each image in this location: 
+```
+coiss_20XX/extras/browse/XXXXXXXX_XXXXXXXXX/
+```
+Also, there are 50x50 thumbnails here: 
+```
+coiss_20XX/extras/thumbnail/XXXXXXXX_XXXXXXXXX/
+```
+And around volume 25 (coiss_25), NASA started including a collection of 16-bit greyscale TIFF files at 1024x1024 here:
+```
+coiss_20XX/extras/tiff/XXXXXXXX_XXXXXXXXX/
+```
+These contain an enormous amount of data, and are great for experimenting with different exposures to pull out important details. BUT – many of these TIFFs appear black when you open them. You need to convert them to 8-bit greyscale and adjust their levels to see correctly balanced images (though this destroys a lot of the information that the 16-bit version has).
+
+
 ## Other cool info
+
+Once you have your images converted, you can do lots of cool stuff. 
 
 If you want to make beautiful color images from Cassini, first, go read this great overview of how to do this in Photoshop, as it basically covers the same concept: http://www.planetary.org/explore/space-topics/space-imaging/tutorial_rgb_ps.html 
 
