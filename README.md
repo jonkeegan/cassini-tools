@@ -84,7 +84,7 @@ Then import the CSV (any way you are most comfortable, such a phpMyAdmin, Sqeuel
 
 ### Convert the raw binary data to images you can use
 
-This part stinks. I wanted to use the highest resolution (1024x1024) images, so I took all of the files (.IMG and .LBL files), and copied them all to a single directory (I actually made a series of smaller directories as it took so long to process). Then I generated PNGs of each image using the Windows command line utility **IMG2PNG** (http://www.mmedia.is/bjj/utils/img2png/). It actually reads the metadata for each image, and uses that data to convert the raw image data to a PNG.
+This part stinks. For me it was just a pain, beacuse I'm on a Mac, and had to use a VM to run this utility. I wanted to use the highest resolution (1024x1024) images, so I took all of the files (.IMG and .LBL files), and copied them all to a single directory (I actually made a series of smaller directories as it took so long to process). Then I generated PNGs of each image using the Windows command line utility **IMG2PNG** (http://www.mmedia.is/bjj/utils/img2png/). It actually reads the metadata for each image, and uses that data to convert the raw image data to a PNG. So ***IMG2PNG*** is great, but a bit of a hoop to jump through if you are on a Mac. Anyone want to write a Unix / Linux port of it? Please?
 
 Alternatively, there are some other images that you can use right off the bat. 
 
