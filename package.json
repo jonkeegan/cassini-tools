@@ -1,0 +1,27 @@
+{
+  "name": "cassini-helper",
+  "version": "1.0.0",
+  "description": "A tool to help gnerate a CSV from Cassini ISS metadata.",
+  "main": "process_coiss.js",
+  "dependencies": {
+    "mv": "^2.1.1",
+    "moment": "^2.10.6",
+    "npm-init": "^1.0.0",
+    "path": "^0.12.7",
+    "walk": "^2.3.9"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.dowjones.net/WSJNewsGraphics/cassini-data-tools.git"
+  },
+  "keywords": [
+    "cassini",
+    "nasa"
+  ],
+  "author": "Jon Keegan",
+  "license": "ISC"
+}
