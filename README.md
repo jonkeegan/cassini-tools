@@ -121,7 +121,7 @@ Here's such a filter sequence I found:
 
 CL1 and CL2 are clear, so that sequence is blue, green, red.
 
-You can then combine those images in imagemagick to make a composite color image, assigning each image to it's appropriate RGB channel. 
+You can then combine those images in imagemagick to make a composite color image, assigning each image to its appropriate RGB channel. 
 
 ```convert red_W1731454078_1.jpeg green_W1731454045_1.jpeg blue_W1731454012_1.jpeg -combine rgb_combined.jpg```
 
