@@ -48,20 +48,21 @@ This will run through the specificed `coiss_20XX` directories, and export a CSV
 ### Create and populate database
 
 Make your MySQL table
-```DROP TABLE IF EXISTS `cassini_ISS_metadata`;
+```
+DROP TABLE IF EXISTS 'cassini_ISS_metadata';
 
-CREATE TABLE `cassini_ISS_metadata` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `full_path` varchar(255) DEFAULT NULL,
-  `image_id` varchar(255) DEFAULT NULL,
-  `filters` varchar(255) DEFAULT NULL,
-  `series_id` varchar(255) DEFAULT NULL,
-  `series_number` int(11) DEFAULT NULL,
-  `image_time` varchar(255) DEFAULT NULL,
-  `target` varchar(255) DEFAULT NULL,
-  `adjusted_ts` date DEFAULT NULL,
-  `clean_date` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+CREATE TABLE 'cassini_ISS_metadata' (
+  'id' int(11) unsigned NOT NULL AUTO_INCREMENT,
+  'full_path' varchar(255) DEFAULT NULL,
+  'image_id' varchar(255) DEFAULT NULL,
+  'filters' varchar(255) DEFAULT NULL,
+  'series_id' varchar(255) DEFAULT NULL,
+  'series_number' int(11) DEFAULT NULL,
+  'image_time' varchar(255) DEFAULT NULL,
+  'target' varchar(255) DEFAULT NULL,
+  'adjusted_ts' date DEFAULT NULL,
+  'clean_date' varchar(255) DEFAULT NULL,
+  PRIMARY KEY ('id')
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 ```
 Then import the CSV (any way you are most comfortable, such a phpMyAdmin, Sqeuel Pro, etc)
@@ -89,7 +90,7 @@ You can then combine those images in imagemagick to make a composite color image
 Keep an eye on how large the interval is between images, as the closer the better. You will often see the images moving significantly, which will make for pretty misaligned images. Doing this by hand in Photoshop is more often than not the best way to make color images, but this way is cooler. 
 
 COLOR FILTERS KEY FROM HERE: http://saturn.jpl.nasa.gov/faq/FAQRawImages/
-
+```
 The Narrow Angle camera has 12 filters per wheel.   
     
 Filter Wheel 1  
@@ -143,10 +144,9 @@ HAL Hydrogen Alpha
 IRP90   Infrared 90º polarizer
 IRP0    Infrared 0º polarizer
 IR1 Infrared band 1
+```
 
-*/
-
-/*
+```
 === IDENTIFICATION DATA ELEMENTS ==== 
 ANTIBLOOMING_STATE_FLAG = "ON"
 BIAS_STRIP_MEAN = 16.935421
@@ -215,5 +215,5 @@ TARGET_LIST = "N/A"
 TARGET_NAME = "SATURN"
 TELEMETRY_FORMAT_ID = "UNK"
 VALID_MAXIMUM = (9896,4095)
-*/
+```
 
