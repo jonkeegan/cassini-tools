@@ -10,9 +10,9 @@ var walker;
 
 // this script will process the extracted files for each "coiss_XXXX" directory from the cassini archive:
 // http://pds-imaging.jpl.nasa.gov/volumes/iss.html
-// It wiil loop through all of the .LBL files and console.log out a CSV
+// It wiil loop through all of the .LBL files and console.log() out a CSV
 
-// Uasage: "node process_coiss.js > output.csv"
+// Usage: "node process_coiss.js > output.csv"
 
 var output_data = '';
 
@@ -100,134 +100,4 @@ function readLines(input, the_file, parent_dir, full_path) { //var this_data = {
         return this_data;
     }
 }
-
-/*
-COLOR FILTERS KEY FROM HERE: http://saturn.jpl.nasa.gov/faq/FAQRawImages/
-
-The Narrow Angle camera has 12 filters per wheel.   
-    
-Filter Wheel 1  
-CL1 Clear
-RED Red
-BL1 Blue band 1
-UV2 Ultraviolet band 2
-UV1 Ultraviolet band 1
-IRP0    Infrared 0º polarizer
-P120    120º polarizer
-P60 60º polarizer
-P0  0º polarizer
-HAL Hydrogen Alpha
-IR4 Infrared band 4
-IR2 Infrared band 2
-    
-Filter Wheel 2  
-CL2 Clear
-GRN Green
-UV3 Ultraviolet band 3
-BL2 Blue band 2
-MT2 Methane band 2
-CB2 Continuum band 2
-MT3 Methane band 3
-CB3 Continuum band 3
-MT1 Methane band 1
-CB1 Continuum band 1
-IR3 Infrared band 3
-IR1 Infrared band 1
-    
-The Wide Angle camera has nine filters per wheel.   
-    
-Filter Wheel 1  
-CL1 Clear
-IR3 Infrared band 3
-IR4 Infrared band 4
-IR5 Infrared band 5
-CB3 Continuum band 3
-MT3 Methane band 3
-CB2 Continuum band 2
-MT2 Methane band 2
-IR2 Infrared band 2
-    
-Filter Wheel 2  
-CL2 Clear
-RED Red
-GRN Green
-BL1 Blue band 1
-VIO Violet
-HAL Hydrogen Alpha
-IRP90   Infrared 90º polarizer
-IRP0    Infrared 0º polarizer
-IR1 Infrared band 1
-
-*/
-
-/*
-=== IDENTIFICATION DATA ELEMENTS ==== 
-ANTIBLOOMING_STATE_FLAG = "ON"
-BIAS_STRIP_MEAN = 16.935421
-CALIBRATION_LAMP_STATE_FLAG = "N/A"
-COMMAND_FILE_NAME = "trigger_6063_4.ioi"
-COMMAND_SEQUENCE_NUMBER = 6063
-DARK_STRIP_MEAN = 0.000000
-DATA_CONVERSION_TYPE = "TABLE"
-DATA_SET_ID = "CO-S-ISSNA/ISSWA-2-EDR-V1.0"
-DELAYED_READOUT_FLAG = "NO"
-DESCRIPTION = "N/A"
-DETECTOR_TEMPERATURE = -89.243546 <DEGC>
-EARTH_RECEIVED_START_TIME = 2004-110T14:32:47.439
-EARTH_RECEIVED_STOP_TIME = 2004-110T14:34:18.462
-ELECTRONICS_BIAS = 112
-EXPECTED_MAXIMUM = (0.296517,0.763812)
-EXPECTED_PACKETS = 335
-EXPOSURE_DURATION = 18000.000000
-FILTER_NAME = ("CL1","CL2")
-FILTER_TEMPERATURE = -0.468354
-FLIGHT_SOFTWARE_VERSION_ID = "1.3"
-GAIN_MODE_ID = "12 ELECTRONS PER DN"
-IMAGE_MID_TIME = 2004-109T05:52:24.872
-IMAGE_NUMBER = "1460960167"
-IMAGE_OBSERVATION_TYPE = {"SCIENCE"}
-IMAGE_TIME = 2004-109T05:52:33.872
-INSTRUMENT_DATA_RATE = 182.783997
-INSTRUMENT_HOST_NAME = "CASSINI ORBITER"
-INSTRUMENT_ID = "ISSNA"
-INSTRUMENT_MODE_ID = "FULL"
-INSTRUMENT_NAME = "IMAGING SCIENCE SUBSYSTEM NARROW ANGLE"
-INST_CMPRS_PARAM = ("N/A","N/A","N/A","N/A")
-INST_CMPRS_RATE = (2.300000,2.330292)
-INST_CMPRS_RATIO = 3.433047
-INST_CMPRS_TYPE = "LOSSLESS"
-LIGHT_FLOOD_STATE_FLAG = "ON"
-METHOD_DESC = "ISSPT2.5;I/F=9.00e-06@9.037AU;ISS_C44OT_APPSATSRC001_PRIME_2"
-MISSING_LINES = 0
-MISSING_PACKET_FLAG = "NO"
-MISSION_NAME = "CASSINI-HUYGENS"
-MISSION_PHASE_NAME = "APPROACH SCIENCE"
-OBSERVATION_ID = "ISS_C44OT_APPSATSRC009_PRIME"
-OPTICS_TEMPERATURE = (0.712693,1.905708)
-ORDER_NUMBER = 1
-PARALLEL_CLOCK_VOLTAGE_INDEX = 9
-PREPARE_CYCLE_INDEX = 6
-PRODUCT_CREATION_TIME = 2004-110T20:19:19.000
-PRODUCT_ID = "1_N1460960167.118"
-PRODUCT_VERSION_TYPE = "FINAL"
-READOUT_CYCLE_INDEX = 10
-RECEIVED_PACKETS = 340
-SENSOR_HEAD_ELEC_TEMPERATURE = 1.633024
-SEQUENCE_ID = "C44"
-SEQUENCE_NUMBER = 13
-SEQUENCE_TITLE = "--"
-SHUTTER_MODE_ID = "NACONLY"
-SHUTTER_STATE_ID = "ENABLED"
-SOFTWARE_VERSION_ID = "ISS 9.00 02-05-2004"
-SPACECRAFT_CLOCK_CNT_PARTITION = 1
-SPACECRAFT_CLOCK_START_COUNT = "1460960149.118"
-SPACECRAFT_CLOCK_STOP_COUNT = "1460960167.118"
-START_TIME = 2004-109T05:52:15.872
-STOP_TIME = 2004-109T05:52:33.872
-TARGET_DESC = "Constant I/F"
-TARGET_LIST = "N/A"
-TARGET_NAME = "SATURN"
-TELEMETRY_FORMAT_ID = "UNK"
-VALID_MAXIMUM = (9896,4095)
-*/
 
