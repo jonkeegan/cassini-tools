@@ -1,6 +1,7 @@
 // cassini-tools by Jon Keegan 
 // Twitter: @jonkeegan
 // Github: https://github.com/jonkeegan
+// Repo: https://github.com/jonkeegan/cassini-tools
 
 var fs = require('fs');
 var walk = require('walk');
