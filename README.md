@@ -7,7 +7,7 @@ The definitive, offical reference guide to all Casini data is here: http://pds-r
 ### Requirements
 This uses **Node**, **MySQL** and some standard command line tools. Extra stuff requires **ImageMagick** (http://www.imagemagick.org/).
 
-The main tool in here is **process_coiss.js** a node script that will go through directories full of raw Cassini ISS data downloads and export a CSV file of all image metadata than can then be used to import into a database. This database can then be used to find, sort and query sequnces of Cassini images.  I've also included **cassini_ISS_metadata.sql** which is the code needed to create a MySQL table to import your CSV into. 
+The main tool in here is **process_coiss.js** a node script that will go through directories full of raw Cassini ISS data downloads and export a CSV file of all image metadata than can then be used to import into a database. This database can then be used to find, sort and query sequences of Cassini images.  I've also included **cassini_ISS_metadata.sql** which is the code needed to create a MySQL table to import your CSV into. 
 
 ### Download the raw Cassini data
 The raw binary images and metadata text files can be downloaded here:
@@ -33,7 +33,7 @@ tar xopf coiss_2002.tar.gz
 tar xopf coiss_2003.tar.gz
 ```
 
-### Install node dependecies
+### Install node dependencies
 
 Have npm install the node dependencies you need for this tool. In the terminal, navigate to the directory that holds this repo. Then type: 
 ``` npm install```
@@ -48,7 +48,7 @@ You also need to tell the script which `coiss` directory to process.
 process_directory("coiss_2001");
 ```
 
-This will just process one `coiss_20XX` directory at a time. You can also uncomment the for loop below that to process a sequnce of these directories. 
+This will just process one `coiss_20XX` directory at a time. You can also uncomment the for loop below that to process a sequence of these directories. 
 
 If you want, you can customize the fields that are extracted from the metadata field (see below in this note for a full list). You can add them to the **fields_to_process** array:
 ```
@@ -57,7 +57,7 @@ var fields_to_process = ['FILTER_NAME', '^IMAGE_HEADER', 'TARGET_DESC', 'SEQUENC
 
 ### Run the script
 
-This will run through the specificed "coiss_20XX" directories, and export a CSV
+This will run through the specified "coiss_20XX" directories, and export a CSV
 ```node process_coiss.js > output.csv```
 
 ### Create and populate database
@@ -80,11 +80,11 @@ CREATE TABLE 'cassini_ISS_metadata' (
   PRIMARY KEY ('id')
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 ```
-Then import the CSV (any way you are most comfortable, such a phpMyAdmin, Sqeuel Pro, etc)
+Then import the CSV (any way you are most comfortable, such a phpMyAdmin, Sequel Pro, etc)
 
 ### Convert the raw binary data to images you can use
 
-This part stinks. For me it was just a pain, beacuse I'm on a Mac, and had to use a VM to run this utility. I wanted to use the highest resolution (1024x1024) images, so I took all of the files (.IMG and .LBL files), and copied them all to a single directory (I actually made a series of smaller directories as it took so long to process). Then I generated PNGs of each image using the Windows command line utility **IMG2PNG** (http://www.mmedia.is/bjj/utils/img2png/). It actually reads the metadata for each image, and uses that data to convert the raw image data to a PNG. So ***IMG2PNG*** is great, but a bit of a hoop to jump through if you are on a Mac. Anyone want to write a Unix / Linux port of it? Please?
+This part stinks. For me it was just a pain, because I'm on a Mac, and had to use a VM to run this utility. I wanted to use the highest resolution (1024x1024) images, so I took all of the files (.IMG and .LBL files), and copied them all to a single directory (I actually made a series of smaller directories as it took so long to process). Then I generated PNGs of each image using the Windows command line utility **IMG2PNG** (http://www.mmedia.is/bjj/utils/img2png/). It actually reads the metadata for each image, and uses that data to convert the raw image data to a PNG. So ***IMG2PNG*** is great, but a bit of a hoop to jump through if you are on a Mac. Anyone want to write a Unix / Linux port of it? Please?
 
 Alternatively, there are some other images that you can use right off the bat. 
 
@@ -109,7 +109,7 @@ Once you have your images converted, you can do lots of cool stuff.
 
 If you want to make beautiful color images from Cassini, first, go read this great overview of how to do this in Photoshop, as it basically covers the same concept: http://www.planetary.org/explore/space-topics/space-imaging/tutorial_rgb_ps.html 
 
-Using ImageMagick, and your handy new database, you can find cool sequnces of images, where they capture photos in red, green then blue. 
+Using ImageMagick, and your handy new database, you can find cool sequences of images, where they capture photos in red, green then blue. 
 
 Here's such a filter sequence I found:
 
@@ -119,9 +119,9 @@ Here's such a filter sequence I found:
 |269098|W1731454045_1|(CL1,GRN)|S76|18|2012-317T22:33:53.768|Titan|2012-11-13|
 |269106|W1731454078_1|(CL1,RED)|S76|19|2012-317T22:34:26.782|Titan|2012-11-13|
 
-CL1 and CL2 are clear, so that sequnce is blue, green, red.
+CL1 and CL2 are clear, so that sequence is blue, green, red.
 
-You can then combine those images in imagemagick to make a composite color image, assigning each image to it's appropraite RGB channel. 
+You can then combine those images in imagemagick to make a composite color image, assigning each image to its appropriate RGB channel. 
 
 ```convert red_W1731454078_1.jpeg green_W1731454045_1.jpeg blue_W1731454012_1.jpeg -combine rgb_combined.jpg```
 
@@ -194,7 +194,7 @@ The Wide Angle camera has nine filters per wheel.
 |IRP0|Infrared 0º polarizer|
 |IR1|Infrared band 1|
 
-Here's the full list of fields available to extract from a sample metdata file. 
+Here's the full list of fields available to extract from a sample metadata file. 
 ```
 === IDENTIFICATION DATA ELEMENTS ==== 
 ANTIBLOOMING_STATE_FLAG = "ON"
